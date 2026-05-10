@@ -1,10 +1,14 @@
-from gpiozero import Button, LED
-from signal import pause
+from gpiozero import LED
+from time import sleep
 
 led = LED(14)
-button = Button(4)
 
-button.when_pressed = led.on
-button.when_released = led.off
-
-pause()
+# blinking an LED forever
+while True:
+  #set the led ON for one second
+  led.on()
+  sleep(1)
+  #set the led ON for one second
+  led.off()
+  sleep(1)
+ 
